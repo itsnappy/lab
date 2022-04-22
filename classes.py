@@ -6,13 +6,19 @@ class Television:
     MAX_VOLUME = 2      # Maximum TV volume
 
     def __init__(self):
+        """
+        Initialize default channel, volume, and ON/OFF position
+        """
         self.tv_channel = 0
         self.tv_volume = 0
         self.tv_status = False
         
 
     def power(self):
-        
+        """
+        Method to access and power TV on/off
+        :return: TVs new status
+        """
         if self.tv_status == False:
             self.tv_status = True
             
@@ -22,7 +28,10 @@ class Television:
         
 
     def channel_up(self):
-
+        """
+        Method to check and increase channel
+        :return: channel position
+        """
         if self.tv_status == True:
             if self.tv_channel == Television.MAX_CHANNEL:
                 self.tv_channel = Television.MIN_CHANNEL
@@ -31,7 +40,10 @@ class Television:
                 self.tv_channel += 1
 
     def channel_down(self):
-
+        """
+        Method to check and decrease channel
+        :return: channel position
+        """
         if self.tv_status == True:
             
             if self.tv_channel == Television.MIN_CHANNEL:
@@ -41,7 +53,10 @@ class Television:
                 self.tv_channel -= 1
 
     def volume_up(self):
-        
+        """
+        Method to access and increase volume
+        :return: volume position
+        """
         if self.tv_status == True:
             if self.tv_volume == Television.MAX_VOLUME:
                 pass
@@ -50,7 +65,10 @@ class Television:
                 self.tv_volume += 1
                 
     def volume_down(self):
-        
+        """
+        Method to access and decrease volume
+        :return: volume position
+        """
         if self.tv_status == True:
             if self.tv_volume == Television.MIN_VOLUME:
                 pass
@@ -59,6 +77,10 @@ class Television:
                 self.tv_volume -= 1
 
     def __str__(self):
+        """
+        Method that accesses tv status, channel, and volume position
+        :return: TV details (Volume, Channel, ON/OFF)
+        """
         if self.tv_status == True:
             return(f"Tv status: Is on, Channel = {self.tv_channel}, Volume = {self.tv_volume}")
         
