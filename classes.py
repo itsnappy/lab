@@ -5,7 +5,7 @@ class Television:
     MIN_VOLUME = 0      # Minimum TV volume
     MAX_VOLUME = 2      # Maximum TV volume
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initialize default channel, volume, and ON/OFF position
         """
@@ -14,7 +14,7 @@ class Television:
         self.tv_status = False
         
 
-    def power(self):
+    def power(self) -> None:
         """
         Method to access and power TV on/off
         :return: TVs new status
@@ -27,7 +27,7 @@ class Television:
         
         
 
-    def channel_up(self):
+    def channel_up(self) -> None:
         """
         Method to check and increase channel
         :return: channel position
@@ -39,7 +39,7 @@ class Television:
             else:
                 self.tv_channel += 1
 
-    def channel_down(self):
+    def channel_down(self) -> None:
         """
         Method to check and decrease channel
         :return: channel position
@@ -52,7 +52,7 @@ class Television:
             else:
                 self.tv_channel -= 1
 
-    def volume_up(self):
+    def volume_up(self) -> None:
         """
         Method to access and increase volume
         :return: volume position
@@ -64,7 +64,7 @@ class Television:
             else:
                 self.tv_volume += 1
                 
-    def volume_down(self):
+    def volume_down(self) -> None:
         """
         Method to access and decrease volume
         :return: volume position
@@ -76,7 +76,7 @@ class Television:
             else:
                 self.tv_volume -= 1
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Method that accesses tv status, channel, and volume position
         :return: TV details (Volume, Channel, ON/OFF)
