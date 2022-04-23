@@ -14,22 +14,31 @@ class Television:
         self.tv_status = False
         
 
-    def power(self) -> None:
+    def power(self, power: str) -> string:
         """
         Method to access and power TV on/off
+        :param power: Turning TV ON/OFF
         :return: TVs new status
         """
-        if self.tv_status == False:
-            self.tv_status = True
+        if power.lower() == "yes":
+            if self.tv_status == False:
+                self.tv_status = True
+                return "power on"
             
-        else:
-            self.tv_status = False
+            else:
+                self.tv_status = False
+                return "power off"
+
+        if power.lower() == "no":
+            return "nothing"
+
         
         
 
-    def channel_up(self) -> None:
+    def channel_up(self, switch) -> None:
         """
         Method to check and increase channel
+        :param switch:
         :return: channel position
         """
         if self.tv_status == True:
@@ -39,9 +48,10 @@ class Television:
             else:
                 self.tv_channel += 1
 
-    def channel_down(self) -> None:
+    def channel_down(self, switch) -> None:
         """
         Method to check and decrease channel
+        :param switch:
         :return: channel position
         """
         if self.tv_status == True:
@@ -52,9 +62,10 @@ class Television:
             else:
                 self.tv_channel -= 1
 
-    def volume_up(self) -> None:
+    def volume_up(self, switch) -> None:
         """
         Method to access and increase volume
+        :param switch:
         :return: volume position
         """
         if self.tv_status == True:
@@ -64,9 +75,10 @@ class Television:
             else:
                 self.tv_volume += 1
                 
-    def volume_down(self) -> None:
+    def volume_down(self, switch) -> None:
         """
         Method to access and decrease volume
+        :param switch:
         :return: volume position
         """
         if self.tv_status == True:
