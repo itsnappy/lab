@@ -35,18 +35,24 @@ class Television:
         
         
 
-    def channel_up(self, switch) -> None:
+    def channel_up(self, switch: str) -> string:
         """
         Method to check and increase channel
-        :param switch:
+        :param switch: increase channel up or not
         :return: channel position
         """
-        if self.tv_status == True:
-            if self.tv_channel == Television.MAX_CHANNEL:
-                self.tv_channel = Television.MIN_CHANNEL
+        if switch.lower() == "yes":
+            if self.tv_status == True:
+                if self.tv_channel == Television.MAX_CHANNEL:
+                    self.tv_channel = Television.MIN_CHANNEL
+                    return "channel 0"
+                else:
+                    self.tv_channel += 1
+                    return "channel +1"
 
-            else:
-                self.tv_channel += 1
+        if switch.lower() == "no":
+            return "nothing"
+
 
     def channel_down(self, switch) -> None:
         """
